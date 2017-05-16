@@ -17881,30 +17881,38 @@ Video  Recognized                                                    Correct
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Question 3:</strong>  Summarize the error results from three combinations of features and model selectors.  What was the "best" combination and why?  What additional information might we use to improve our WER?  For more insight on improving WER, take a look at the introduction to Part 4.</p>
-<p><img src="wer_table.jpg"></p>
+<p><!--<img src="wer_table.jpg">-->
+<img src="http://github.com/sperazza/HMM-Probabilistic-Models/raw/master/wer_table.jpg"></p>
 <p>This table shows the error comparison for all the features and model selectors.  The heavy green in the BIC and DIC models show they give superior results.  Additionally, the heavy green in most of the Polar features, shows it performed well across most selectors.</p>
-<p>&lt;img src ="wer_compare.jpg"&gt;</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><!-- <img src ="wer_compare.jpg"> -->
+<img src="http://github.com/sperazza/HMM-Probabilistic-Models/raw/master/wer_compare.jpg"></p>
 <p>Overall You can see the polar feature set had the lowest overall error rate, as shown in the above graph.</p>
-<p>&lt;img src ="wer_polar.jpg"&gt;</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><!--<img src ="wer_polar.jpg">-->
+<img src="http://github.com/sperazza/HMM-Probabilistic-Models/raw/master/wer_polar.jpg"></p>
 <p>Drilling down into the polar feature set, the best performing selectors were BIC and DIC, the best overall selector was DIC within this polar feature set.</p>
 <p>Improving Error rates:</p>
 <p>The error rate seems to have a lot to do with recognition of individual ASL words, and the blending of the words when creating sentences.  The boundaries between words are not consistent because the ending of one word, often is the starting point for the beginning of the next word, which makes the word recognition inconsistent and more difficult.  The ordering of the words with word pairing would help greatly to improve the word adjacency factor.   Additionlly, deep learning combined with HMM would be a next logical choice, as deep image recognition has progressed to a point that would probably make word identification, as well as adjacency more accurate.</p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
