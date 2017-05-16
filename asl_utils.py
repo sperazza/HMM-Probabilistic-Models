@@ -38,6 +38,46 @@ def show_errors(guesses: list, test_set: SinglesData):
         print('{:5}: {:60}  {}'.format(video_num, ' '.join(recognized_sentence), ' '.join(correct_sentence)))
 
 
+def show_WER(guesses: list, test_set: SinglesData):
+    """ Print WER and sentence differences in tabular form
+# TODO Choose a feature set and model selector
+features = features_custom # change as needed
+model_selector = SelectorBIC # change as needed
+
+# TODO Recognize the test set and display the result with the show_errors method
+models = train_all_words(features, model_selector)
+test_set = asl.build_test(features)
+probabilities, guesses = recognize(models, test_set)
+show_WER(guesses, test_set)
+    :param guesses: list of test item answers, ordered
+    :param test_set: SinglesData object
+    :return:
+        nothi# TODO Choose a feature set and model selector
+features = features_ground # change as needed
+model_selector = SelectorConstant # change as needed
+
+# TODO Recognize the test set and display the result with the show_errors method
+models = train_all_words(features, model_selector)
+test_set = asl.build_test(features)
+probabilities, guesses = recognize(models, test_set)
+show_errors(guesses, test_set)ng returned, prints error report
+
+    WER = (S+I+D)/N  but we have no insertions or deletions for isolated words so WER = S/N
+    """
+    S = 0
+    N = len(test_set.wordlist)
+    num_test_words = len(test_set.wordlist)
+    if len(guesses) != num_test_words:
+        print("Size of guesses must equal number of test words ({})!".format(num_test_words))
+    for word_id in range(num_test_words):
+        if guesses[word_id] != test_set.wordlist[word_id]:
+            S += 1
+
+    print("\n**** WER = {}".format(float(S) / float(N)))
+    print("Total correct: {} out of {}".format(N - S, N))
+    print('Video  Recognized                                                    Correct')
+    print('=====================================================================================================')
+
 def getKey(item):
     return item[1]
 
